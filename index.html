@@ -4,12 +4,14 @@
   <meta charset="UTF-8" />
   <title>Penna Dhanush | MERN Developer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
- <link rel="icon" type="image/png" href="favicon.png" />
-<link rel="shortcut icon" href="favicon.png" type="image/png" />
-
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="shortcut icon" href="favicon.png" type="image/png" />
 
   <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
   <style>
     :root {
       --bg-main: #020617;
@@ -94,9 +96,10 @@
     }
 
     .card {
-      background: radial-gradient(circle at top left, rgba(56, 189, 248, 0.09), transparent 55%),
-                  radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.09), transparent 55%),
-                  var(--bg-card-soft);
+      background:
+        radial-gradient(circle at top left, rgba(56, 189, 248, 0.09), transparent 55%),
+        radial-gradient(circle at bottom right, rgba(249, 115, 22, 0.09), transparent 55%),
+        var(--bg-card-soft);
       border-radius: var(--radius-xl);
       border: 1px solid rgba(148, 163, 184, 0.15);
       box-shadow: var(--shadow-soft);
@@ -305,7 +308,12 @@
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
-      transition: transform var(--transition-med), box-shadow var(--transition-med), background var(--transition-med), border var(--transition-med), color var(--transition-med);
+      transition:
+        transform var(--transition-med),
+        box-shadow var(--transition-med),
+        background var(--transition-med),
+        border var(--transition-med),
+        color var(--transition-med);
     }
 
     .btn-primary {
@@ -661,7 +669,11 @@
         <a href="#projects">Projects</a>
         <a href="#github-stats">GitHub</a>
         <a href="#contact">Contact</a>
-        <button class="nav-cta" onclick="window.open('https://drive.google.com/YOUR_RESUME_LINK', '_blank')">
+        <!-- TODO: Put your real Google Drive resume link here -->
+        <button
+          class="nav-cta"
+          onclick="window.open('https://drive.google.com/YOUR_RESUME_LINK', '_blank')"
+        >
           Resume ⬇
         </button>
       </nav>
@@ -689,18 +701,21 @@
               <div class="tag">Open Source</div>
             </div>
             <div class="hero-actions">
-              <button class="btn-primary" onclick="document.getElementById('projects').scrollIntoView({behavior:'smooth'})">
+              <a class="btn-primary" href="#projects">
                 View Projects 🚀
-              </button>
-              <button class="btn-ghost" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">
-                Contact Me ✉
-              </button>
+              </a>
+              <a
+                class="btn-ghost"
+                href="Penna-Dhanush-Resume.pdf"
+                download="Penna-Dhanush-Resume.pdf"
+              >
+                Download Resume ⬇
+              </a>
             </div>
           </div>
           <div class="hero-photo-wrapper">
             <div class="hero-orbit"></div>
             <div class="hero-photo-frame">
-              <!-- Replace src with your real professional image -->
               <img src="dhanush.JPG" alt="Penna Dhanush" class="hero-photo" />
             </div>
           </div>
@@ -766,9 +781,48 @@
       <section id="projects">
         <h2 class="section-title"><span></span>Projects</h2>
         <p class="section-subtitle">
-          A selection of projects that showcase my core strengths in the MERN stack.
+          A selection of projects that showcase my core strengths in the MERN stack and front-end.
         </p>
         <div class="projects-grid">
+
+          <!-- Project 0: Portfolio Website -->
+          <article class="card project-card">
+            <div class="project-header">
+              <div class="project-title-row">
+                <h3 class="project-title">Personal Portfolio Website</h3>
+                <span class="project-badge">Frontend · Responsive</span>
+              </div>
+              <p class="project-desc">
+                A single-page responsive portfolio built with semantic HTML, modern CSS, and a bit of vanilla JavaScript.
+                Showcases my skills, projects, GitHub activity, and contact details with a clean, professional UI.
+              </p>
+            </div>
+            <div class="project-meta">
+              <span class="meta-pill">HTML</span>
+              <span class="meta-pill">CSS</span>
+              <span class="meta-pill">JavaScript</span>
+              <span class="meta-pill">Responsive Design</span>
+            </div>
+            <div class="project-actions">
+              <a
+                class="btn-link"
+                href="https://github.com/dhanushpenna/dhanushpenna.github.io"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub Code
+              </a>
+              <a
+                class="btn-link"
+                href="https://dhanushpenna.github.io"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Live Portfolio
+              </a>
+            </div>
+          </article>
+
           <!-- Project 1 -->
           <article class="card project-card">
             <div class="project-header">
@@ -790,10 +844,22 @@
               <span class="meta-pill">JWT Auth</span>
             </div>
             <div class="project-actions">
-              <a class="btn-link" href="https://github.com/yourusername/smart-health-care" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with your real repo link -->
+              <a
+                class="btn-link"
+                href="https://github.com/dhanushpenna/smart-health-care-system"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub Code
               </a>
-              <a class="btn-link" href="https://smart-health-care-demo-link.com" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with deployed link or video demo -->
+              <a
+                class="btn-link"
+                href="https://your-smart-health-demo-link.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Live Demo / Video
               </a>
             </div>
@@ -817,10 +883,22 @@
               <span class="meta-pill">LocalStorage</span>
             </div>
             <div class="project-actions">
-              <a class="btn-link" href="https://github.com/yourusername/taskflow" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with your real repo link -->
+              <a
+                class="btn-link"
+                href="https://github.com/dhanushpenna/taskflow"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub Code
               </a>
-              <a class="btn-link" href="https://yourusername.github.io/taskflow" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with real deployment -->
+              <a
+                class="btn-link"
+                href="https://dhanushpenna.github.io/taskflow"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Live Demo
               </a>
             </div>
@@ -844,10 +922,22 @@
               <span class="meta-pill">Responsive UI</span>
             </div>
             <div class="project-actions">
-              <a class="btn-link" href="https://github.com/yourusername/farmer-connect" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with your real repo link -->
+              <a
+                class="btn-link"
+                href="https://github.com/dhanushpenna/farmer-connect"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub Code
               </a>
-              <a class="btn-link" href="https://farmer-connect-demo.com" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with real deployment or demo video -->
+              <a
+                class="btn-link"
+                href="https://your-farmer-connect-demo.com"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Demo / Video
               </a>
             </div>
@@ -871,10 +961,22 @@
               <span class="meta-pill">JavaScript</span>
             </div>
             <div class="project-actions">
-              <a class="btn-link" href="https://github.com/yourusername/dsa-tracker" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with your real repo link -->
+              <a
+                class="btn-link"
+                href="https://github.com/dhanushpenna/dsa-tracker"
+                target="_blank"
+                rel="noreferrer"
+              >
                 GitHub Code
               </a>
-              <a class="btn-link" href="https://yourusername.github.io/dsa-tracker" target="_blank" rel="noreferrer">
+              <!-- TODO: Replace with real deployment -->
+              <a
+                class="btn-link"
+                href="https://dhanushpenna.github.io/dsa-tracker"
+                target="_blank"
+                rel="noreferrer"
+              >
                 Live Demo
               </a>
             </div>
@@ -882,49 +984,56 @@
         </div>
       </section>
 
-<!-- GitHub Stats -->
-<section id="github-stats">
-  <h2 class="section-title"><span></span>GitHub Statistics & Activity</h2>
-  <p class="section-subtitle">
-    Live GitHub data fetched using the official GitHub API.
-  </p>
+      <!-- GitHub Stats -->
+      <section id="github-stats">
+        <h2 class="section-title"><span></span>GitHub Statistics & Activity</h2>
+        <p class="section-subtitle">
+          Live GitHub data fetched using the official GitHub API.
+        </p>
 
-  <div class="stats-grid">
-    <!-- Live GitHub Profile Stats -->
-    <div class="card">
-      <h3>GitHub Profile Stats</h3>
-      <p class="stats-placeholder" style="margin-top: 0.5rem;">
-        These numbers are fetched in real-time from the GitHub API.
-      </p>
-      <br />
-      <ul style="font-size: 0.9rem; color: var(--text-muted); display: grid; gap: 0.3rem;">
-        <li><strong>Username:</strong> <span id="gh-username">—</span></li>
-        <li><strong>Public Repositories:</strong> <span id="gh-public-repos">—</span></li>
-        <li><strong>Followers:</strong> <span id="gh-followers">—</span></li>
-        <li><strong>Following:</strong> <span id="gh-following">—</span></li>
-        <li><strong>GitHub Since:</strong> <span id="gh-created-at">—</span></li>
-      </ul>
-    </div>
+        <div class="stats-grid">
+          <!-- Live GitHub Profile Stats -->
+          <div class="card">
+            <h3>GitHub Profile Stats</h3>
+            <p class="stats-placeholder" style="margin-top: 0.5rem;">
+              These numbers are fetched in real-time from the GitHub API.
+            </p>
+            <br />
+            <ul
+              style="
+                font-size: 0.9rem;
+                color: var(--text-muted);
+                display: grid;
+                gap: 0.3rem;
+              "
+            >
+              <li><strong>Username:</strong> <span id="gh-username">—</span></li>
+              <li>
+                <strong>Public Repositories:</strong>
+                <span id="gh-public-repos">—</span>
+              </li>
+              <li><strong>Followers:</strong> <span id="gh-followers">—</span></li>
+              <li><strong>Following:</strong> <span id="gh-following">—</span></li>
+              <li><strong>GitHub Since:</strong> <span id="gh-created-at">—</span></li>
+            </ul>
+          </div>
 
-    <!-- Live Recent Activity -->
-    <div class="card">
-      <h3>Recent Public Activity</h3>
-      <p class="stats-placeholder" style="margin-top: 0.5rem;">
-        Summary of your recent public events on GitHub.
-      </p>
-      <br />
-      <ul style="font-size: 0.9rem; color: var(--text-muted); display: grid; gap: 0.3rem;">
-        <li><strong>Recent Public Events (last 30 events):</strong> <span id="gh-recent-events">—</span></li>
-        <li><strong>Recent Push Events:</strong> <span id="gh-recent-pushes">—</span></li>
-        <li><strong>Recent Repo (last event):</strong> <span id="gh-last-repo">—</span></li>
-      </ul>
-      <p class="stats-placeholder" style="margin-top: 0.75rem; font-size: 0.78rem;">
-        Data is based on your latest public activity from the GitHub API.
-      </p>
-    </div>
-  </div>
-</section>
-
+          <!-- Contribution Calendar (Static Image Snapshot) -->
+          <div class="card">
+            <h3>Contribution Calendar</h3>
+            <p class="stats-placeholder" style="margin-top: 0.5rem;">
+              Snapshot of my recent GitHub contribution activity.
+            </p>
+            <br />
+            <!-- TODO: Upload github-calendar.png (screenshot of your GitHub contributions) to repo root -->
+            <img
+              src="github-calendar.png"
+              alt="GitHub Contribution Calendar"
+              style="border-radius: 1rem; width: 100%;"
+            />
+          </div>
+        </div>
+      </section>
 
       <!-- Contact -->
       <section id="contact">
@@ -947,18 +1056,33 @@
               <span>Andhra Pradesh, India</span>
             </div>
             <div class="social-links">
-                <a class="social-pill" href="https://www.linkedin.com/in/pennadhanush/" target="_blank" rel="noreferrer">
-                  LinkedIn
-                </a>
-                <a class="social-pill" href="https://github.com/dhanushpenna" target="_blank" rel="noreferrer">
-                  GitHub
-                </a>
-                <a class="social-pill" href="https://dhanushpenna.github.io" target="_blank" rel="noreferrer">
-                  Portfolio
-                </a>
+              <a
+                class="social-pill"
+                href="https://www.linkedin.com/in/pennadhanush/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                LinkedIn
+              </a>
+              <a
+                class="social-pill"
+                href="https://github.com/dhanushpenna"
+                target="_blank"
+                rel="noreferrer"
+              >
+                GitHub
+              </a>
+              <a
+                class="social-pill"
+                href="https://dhanushpenna.github.io"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Portfolio
+              </a>
             </div>
-
           </div>
+
           <!-- Resume section anchor -->
           <div class="card" id="resume">
             <h3>Resume</h3>
@@ -967,7 +1091,6 @@
             </p>
             <br />
             <div class="hero-actions">
-              <!-- Direct download from your repo or hosting -->
               <a
                 class="btn-primary"
                 href="Penna-Dhanush-Resume.pdf"
@@ -975,7 +1098,7 @@
               >
                 Download Resume ⬇
               </a>
-              <!-- Viewable Google Drive resume link -->
+              <!-- TODO: Put your real Google Drive resume link here -->
               <button
                 class="btn-ghost"
                 onclick="window.open('https://drive.google.com/YOUR_RESUME_LINK', '_blank')"
@@ -996,83 +1119,83 @@
     </footer>
   </div>
 
- <script>
-  // Dynamic year
-  document.getElementById("year").textContent = new Date().getFullYear();
+  <script>
+    // Dynamic year
+    document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Mobile nav toggle
-  const hamburger = document.getElementById("hamburger");
-  const navMobile = document.getElementById("nav-mobile");
-  const navbar = document.querySelector(".navbar");
+    // Mobile nav toggle
+    const hamburger = document.getElementById("hamburger");
+    const navMobile = document.getElementById("nav-mobile");
+    const navbar = document.querySelector(".navbar");
 
-  if (hamburger) {
-    hamburger.addEventListener("click", () => {
-      navbar.classList.toggle("nav-open");
-    });
-  }
-
-  if (navMobile) {
-    navMobile.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", () => {
-        navbar.classList.remove("nav-open");
+    if (hamburger) {
+      hamburger.addEventListener("click", () => {
+        navbar.classList.toggle("nav-open");
       });
-    });
-  }
-
-  // ===== GitHub Live Stats (Official GitHub API) =====
-  document.addEventListener("DOMContentLoaded", async () => {
-    const username = "DhanushPenna";
-
-
-    try {
-      // 1. Fetch basic user profile stats
-      const userRes = await fetch(`https://api.github.com/users/${username}`);
-      if (!userRes.ok) throw new Error("Failed to fetch user data");
-      const user = await userRes.json();
-
-      const ghUsername = document.getElementById("gh-username");
-      const ghRepos = document.getElementById("gh-public-repos");
-      const ghFollowers = document.getElementById("gh-followers");
-      const ghFollowing = document.getElementById("gh-following");
-      const ghCreatedAt = document.getElementById("gh-created-at");
-
-      if (ghUsername) ghUsername.textContent = user.login || username;
-      if (ghRepos) ghRepos.textContent = user.public_repos ?? "0";
-      if (ghFollowers) ghFollowers.textContent = user.followers ?? "0";
-      if (ghFollowing) ghFollowing.textContent = user.following ?? "0";
-      if (ghCreatedAt) {
-        const joinedDate = new Date(user.created_at);
-        ghCreatedAt.textContent = joinedDate.toLocaleDateString(undefined, {
-          year: "numeric",
-          month: "short",
-          day: "numeric",
-        });
-      }
-
-      // 2. Fetch recent public events
-      const eventsRes = await fetch(`https://api.github.com/users/${username}/events/public`);
-      if (eventsRes.ok) {
-        const events = await eventsRes.json();
-        const totalEvents = events.length;
-
-        const pushEvents = events.filter((e) => e.type === "PushEvent");
-        const totalPushEvents = pushEvents.length;
-
-        const lastRepo = events[0]?.repo?.name || "—";
-
-        const ghRecentEvents = document.getElementById("gh-recent-events");
-        const ghRecentPushes = document.getElementById("gh-recent-pushes");
-        const ghLastRepo = document.getElementById("gh-last-repo");
-
-        if (ghRecentEvents) ghRecentEvents.textContent = totalEvents.toString();
-        if (ghRecentPushes) ghRecentPushes.textContent = totalPushEvents.toString();
-        if (ghLastRepo) ghLastRepo.textContent = lastRepo;
-      }
-    } catch (error) {
-      console.error("Error fetching GitHub data:", error);
     }
-  });
-</script>
 
+    if (navMobile) {
+      navMobile.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          navbar.classList.remove("nav-open");
+        });
+      });
+    }
+
+    // ===== GitHub Live Stats (Official GitHub API) =====
+    document.addEventListener("DOMContentLoaded", async () => {
+      const username = "DhanushPenna";
+
+      try {
+        // 1. Fetch basic user profile stats
+        const userRes = await fetch(`https://api.github.com/users/${username}`);
+        if (!userRes.ok) throw new Error("Failed to fetch user data");
+        const user = await userRes.json();
+
+        const ghUsername = document.getElementById("gh-username");
+        const ghRepos = document.getElementById("gh-public-repos");
+        const ghFollowers = document.getElementById("gh-followers");
+        const ghFollowing = document.getElementById("gh-following");
+        const ghCreatedAt = document.getElementById("gh-created-at");
+
+        if (ghUsername) ghUsername.textContent = user.login || username;
+        if (ghRepos) ghRepos.textContent = user.public_repos ?? "0";
+        if (ghFollowers) ghFollowers.textContent = user.followers ?? "0";
+        if (ghFollowing) ghFollowing.textContent = user.following ?? "0";
+        if (ghCreatedAt) {
+          const joinedDate = new Date(user.created_at);
+          ghCreatedAt.textContent = joinedDate.toLocaleDateString(undefined, {
+            year: "numeric",
+            month: "short",
+            day: "numeric",
+          });
+        }
+
+        // 2. Fetch recent public events
+        const eventsRes = await fetch(
+          `https://api.github.com/users/${username}/events/public`
+        );
+        if (eventsRes.ok) {
+          const events = await eventsRes.json();
+          const totalEvents = events.length;
+
+          const pushEvents = events.filter((e) => e.type === "PushEvent");
+          const totalPushEvents = pushEvents.length;
+
+          const lastRepo = events[0]?.repo?.name || "—";
+
+          const ghRecentEvents = document.getElementById("gh-recent-events");
+          const ghRecentPushes = document.getElementById("gh-recent-pushes");
+          const ghLastRepo = document.getElementById("gh-last-repo");
+
+          if (ghRecentEvents) ghRecentEvents.textContent = totalEvents.toString();
+          if (ghRecentPushes) ghRecentPushes.textContent = totalPushEvents.toString();
+          if (ghLastRepo) ghLastRepo.textContent = lastRepo;
+        }
+      } catch (error) {
+        console.error("Error fetching GitHub data:", error);
+      }
+    });
+  </script>
 </body>
 </html>
