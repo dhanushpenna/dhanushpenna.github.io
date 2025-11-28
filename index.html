@@ -881,32 +881,48 @@
       </section>
 
 <!-- GitHub Stats -->
-        <section id="github-stats">
-          <h2 class="section-title"><span></span>GitHub Statistics & Calendar</h2>
-          <p class="section-subtitle">
-            A glimpse of my GitHub activity and contribution history.
-          </p>
-        
-          <div class="stats-grid">
-            <!-- LIVE Contribution Streak (New API) -->
-            <div class="card">
-              <h3>Contribution Streak</h3>
-              <img
-                src="https://streak-stats.demolab.com?user=dhanushpenna&theme=github-dark-blue&hide_border=true&background=00000000"
-                alt="GitHub Streak Stats"
-              />
-            </div>
-        
-            <!-- Contribution Calendar (already working) -->
-            <div class="card">
-              <h3>Contribution Calendar</h3>
-              <img
-                src="https://ghchart.rshah.org/dhanushpenna"
-                alt="GitHub Contribution Calendar"
-              />
-            </div>
-          </div>
-        </section>
+<section id="github-stats">
+  <h2 class="section-title"><span></span>GitHub Statistics & Activity</h2>
+  <p class="section-subtitle">
+    Live GitHub data fetched using the official GitHub API.
+  </p>
+
+  <div class="stats-grid">
+    <!-- Live GitHub Profile Stats -->
+    <div class="card">
+      <h3>GitHub Profile Stats</h3>
+      <p class="stats-placeholder" style="margin-top: 0.5rem;">
+        These numbers are fetched in real-time from the GitHub API.
+      </p>
+      <br />
+      <ul style="font-size: 0.9rem; color: var(--text-muted); display: grid; gap: 0.3rem;">
+        <li><strong>Username:</strong> <span id="gh-username">—</span></li>
+        <li><strong>Public Repositories:</strong> <span id="gh-public-repos">—</span></li>
+        <li><strong>Followers:</strong> <span id="gh-followers">—</span></li>
+        <li><strong>Following:</strong> <span id="gh-following">—</span></li>
+        <li><strong>GitHub Since:</strong> <span id="gh-created-at">—</span></li>
+      </ul>
+    </div>
+
+    <!-- Live Recent Activity -->
+    <div class="card">
+      <h3>Recent Public Activity</h3>
+      <p class="stats-placeholder" style="margin-top: 0.5rem;">
+        Summary of your recent public events on GitHub.
+      </p>
+      <br />
+      <ul style="font-size: 0.9rem; color: var(--text-muted); display: grid; gap: 0.3rem;">
+        <li><strong>Recent Public Events (last 30 events):</strong> <span id="gh-recent-events">—</span></li>
+        <li><strong>Recent Push Events:</strong> <span id="gh-recent-pushes">—</span></li>
+        <li><strong>Recent Repo (last event):</strong> <span id="gh-last-repo">—</span></li>
+      </ul>
+      <p class="stats-placeholder" style="margin-top: 0.75rem; font-size: 0.78rem;">
+        Data is based on your latest public activity from the GitHub API.
+      </p>
+    </div>
+  </div>
+</section>
+
 
       <!-- Contact -->
       <section id="contact">
@@ -978,25 +994,82 @@
     </footer>
   </div>
 
-  <script>
-    // Dynamic year
-    document.getElementById("year").textContent = new Date().getFullYear();
+ <script>
+  // Dynamic year
+  document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Mobile nav toggle
-    const hamburger = document.getElementById("hamburger");
-    const navMobile = document.getElementById("nav-mobile");
-    const navbar = document.querySelector(".navbar");
+  // Mobile nav toggle
+  const hamburger = document.getElementById("hamburger");
+  const navMobile = document.getElementById("nav-mobile");
+  const navbar = document.querySelector(".navbar");
 
+  if (hamburger) {
     hamburger.addEventListener("click", () => {
       navbar.classList.toggle("nav-open");
     });
+  }
 
-    // Close mobile nav when clicking a link
+  if (navMobile) {
     navMobile.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => {
         navbar.classList.remove("nav-open");
       });
     });
-  </script>
+  }
+
+  // ===== GitHub Live Stats (Official GitHub API) =====
+  document.addEventListener("DOMContentLoaded", async () => {
+    const username = "dhanushpenna";
+
+    try {
+      // 1. Fetch basic user profile stats
+      const userRes = await fetch(`https://api.github.com/users/${username}`);
+      if (!userRes.ok) throw new Error("Failed to fetch user data");
+      const user = await userRes.json();
+
+      const ghUsername = document.getElementById("gh-username");
+      const ghRepos = document.getElementById("gh-public-repos");
+      const ghFollowers = document.getElementById("gh-followers");
+      const ghFollowing = document.getElementById("gh-following");
+      const ghCreatedAt = document.getElementById("gh-created-at");
+
+      if (ghUsername) ghUsername.textContent = user.login || username;
+      if (ghRepos) ghRepos.textContent = user.public_repos ?? "0";
+      if (ghFollowers) ghFollowers.textContent = user.followers ?? "0";
+      if (ghFollowing) ghFollowing.textContent = user.following ?? "0";
+      if (ghCreatedAt) {
+        const joinedDate = new Date(user.created_at);
+        ghCreatedAt.textContent = joinedDate.toLocaleDateString(undefined, {
+          year: "numeric",
+          month: "short",
+          day: "numeric",
+        });
+      }
+
+      // 2. Fetch recent public events
+      const eventsRes = await fetch(`https://api.github.com/users/${username}/events/public`);
+      if (eventsRes.ok) {
+        const events = await eventsRes.json();
+        const totalEvents = events.length;
+
+        const pushEvents = events.filter((e) => e.type === "PushEvent");
+        const totalPushEvents = pushEvents.length;
+
+        const lastRepo = events[0]?.repo?.name || "—";
+
+        const ghRecentEvents = document.getElementById("gh-recent-events");
+        const ghRecentPushes = document.getElementById("gh-recent-pushes");
+        const ghLastRepo = document.getElementById("gh-last-repo");
+
+        if (ghRecentEvents) ghRecentEvents.textContent = totalEvents.toString();
+        if (ghRecentPushes) ghRecentPushes.textContent = totalPushEvents.toString();
+        if (ghLastRepo) ghLastRepo.textContent = lastRepo;
+      }
+    } catch (error) {
+      console.error("Error fetching GitHub data:", error);
+    }
+  });
+</script>
+
 </body>
 </html>
